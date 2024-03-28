@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 
-app = Flask(__name__, static_folder='D:/Personal/IPL Win_Loss Predictor/static')
+app = Flask(__name__, static_folder='D:/Personal/Final Yr Proj/IPL Win_Loss Predictor/static')
 
 teams = ['Sunrisers Hyderabad', 'Mumbai Indians', 'Royal Challengers Bangalore', 'Kolkata Knight Riders',
          'Kings XI Punjab', 'Chennai Super Kings', 'Rajasthan Royals', 'Delhi Capitals']
@@ -19,16 +19,16 @@ pipe = pickle.load(open('pipe.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('live_demo.html', teams=sorted(teams), cities=sorted(cities))
+    return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def predict():
     batting_team = None
     bowling_team = None
     result = None
 
-    if request.method == 'POST':
+    if request.method == 'GET':
         batting_team = request.form['batting_team']
         bowling_team = request.form['bowling_team']
         selected_city = request.form['selected_city']
@@ -51,7 +51,7 @@ def predict():
         loss = result[0][0]
         win = result[0][1]
 
-    return render_template('live_demo.html', teams=sorted(teams), cities=sorted(cities), result=result.tolist(),
+    return render_template('index.html', teams=sorted(teams), cities=sorted(cities), result=result.tolist(),
                            batting_team=batting_team, win=round(win * 100), bowling_team=bowling_team,
                            loss=round(loss * 100), target=round(target), score=score, overs=overs, wickets_out= round(10 - wickets), score_op = round(score))
 

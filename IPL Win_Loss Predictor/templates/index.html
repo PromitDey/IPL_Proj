@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <title>IPL Win Predictor</title>
+  </head>
+  <body>
+    <h1>IPL Win Predictor</h1>
+    <div class="container">
+      <form action="http://127.0.0.1:5000/predict" method="post">
+        <label for="batting_team">Select the batting team:</label>
+        <select name="batting_team" id="batting_team">
+          {% for team in teams %}
+          <option value="{{ team }}">{{ team }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="bowling_team">Select the bowling team:</label>
+        <select name="bowling_team" id="bowling_team">
+          {% for team in teams %}
+          <option value="{{ team }}">{{ team }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="selected_city">Select host city:</label>
+        <select name="selected_city" id="selected_city">
+          {% for city in cities %}
+          <option value="{{ city }}">{{ city }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="score">Score:</label>
+        <input type="number" name="score" id="score" />
+
+        <label for="overs">Overs completed:</label>
+        <input type="number" name="overs" id="overs" />
+
+        <label for="wickets">Wickets out:</label>
+        <input type="number" name="wickets" id="wickets" />
+
+        <label for="target">Target:</label>
+        <input type="number" name="target" id="target" />
+
+        <!-- Add other input fields as needed -->
+
+        <button type="submit">Predict Probability</button>
+      </form>
+
+      <!-- Result Section -->
+      {% if result %}
+      <div class="result-card">
+        <h2>Prediction Result</h2>
+        <p>Batting Team - {{ batting_team }}</p>
+        <p>Bowling Team - {{ bowling_team }}</p>
+        <p>Score by Batting Team - {{score_op}}</p>
+        <p>Overs completed - {{overs}}</p>
+        <p>Wickets Out - {{wickets_out}}</p>
+        <p>Target - {{target}}</p>
+        <p>{{ batting_team }} - {{ win }}%</p>
+        <p>{{ bowling_team }} - {{ loss }}%</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
