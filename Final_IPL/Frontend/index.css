@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-custom {
+  background-color: rgba(88, 25, 25, 1);
+  height: 100%;
+}
+
+.header-custom {
+  background-image: linear-gradient(
+    to top,
+    rgba(146, 35, 35, 1),
+    rgba(255, 255, 255, 0.7)
+  );
+}
+
+.box-custom {
+  background-image: linear-gradient(
+    to right,
+    rgba(164, 164, 164, 1),
+    rgba(255, 255, 255, 1),
+    rgba(164, 164, 164, 1)
+  );
+  /* Adjust colors and direction as needed */
+}
+
+.box-small-custom {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(164, 164, 164, 1),
+    rgba(255, 255, 255, 1),
+    rgba(164, 164, 164, 1)
+  );
+}
+
+.circle-custom {
+  background-image: linear-gradient(
+    to right,
+    rgba(3, 174, 0, 1),
+    rgba(1, 72, 0, 1)
+  );
+}
+
+.app-logo {
+  color: rgba(255, 230, 0, 1);
+}
+
+.footer-custom{
+  background-color: rgba(55, 55, 55, 1);
+}
