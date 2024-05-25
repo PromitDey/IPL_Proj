@@ -28,7 +28,7 @@ const AboutUs = () => {
             contribute to the broader field of sports analytics.
             <ul className="list-none mt-4">
               <span className="font-semibold">Technologies Used :</span>{" "}
-              <li>Frontend - ReactJS</li>
+              <li>Frontend - ReactJS, TailwindCSS</li>
               <li>Backend - Flask</li>
               <li>ML Model - Logistic Regression</li>
             </ul>

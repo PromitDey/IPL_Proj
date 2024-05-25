@@ -5,15 +5,15 @@ const RevRate = (props) => {
     console.log(img);
   return (
     <div>
-      <div className="border-2 border-black bg-white rounded-2xl w-[430px] h-[280px]">
+      <div className="border-2 border-black bg-white rounded-2xl w-[430px] h-[280px] hover:drop-shadow-xl">
         <div className="flex">
-          <div className="border-2 border-black w-[66px] h-[64px] rounded-full ml-4 mt-2">
+          <div className="border-2 border-black w-[66px] h-[64px] rounded-full ml-4 mt-2 ">
             <img src={img} className="rounded-full" />
           </div>
           <div className="p-2 mt-3 font-semibold text-2xl">{name}</div>
         </div>
         <div className="border-2 border-black mt-2 h-[56px] bg-black px-2">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center ">
             <div className="text-white">
               <p className="font-semibold text-base">Mega Contest Winner</p>
               <p className="ml-2 font-thin text-sm text-slate-200">
