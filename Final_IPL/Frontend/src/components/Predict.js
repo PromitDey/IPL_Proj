@@ -256,8 +256,8 @@ const Predict = () => {
                       Batting Team
                     </p>
                     <div className="mt-10 font-semibold text-xl px-5 space-y-5">
-                      <p>Win % - {result.loss_probability}%</p>
-                      <p>Loss % - {result.win_probability}%</p>
+                      <p>Win % - {result.win_probability}%</p>
+                      <p>Loss % - {result.loss_probability}%</p>
                     </div>
                   </div>
                 </div>
@@ -267,8 +267,8 @@ const Predict = () => {
                       Bowling Team
                     </p>
                     <div className="mt-10 font-semibold text-xl px-5 space-y-5">
-                      <p>Win % - {result.win_probability}%</p>
-                      <p>Loss % - {result.loss_probability}%</p>
+                      <p>Win % - {result.loss_probability}%</p>
+                      <p>Loss % - {result.win_probability}%</p>
                     </div>
                   </div>
                 </div>
